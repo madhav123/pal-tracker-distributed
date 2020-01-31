@@ -3,9 +3,11 @@ applications:
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
   - route: tracker-timesheets2-madhav.apps.dev.pcf-aws.com
-  memory: 1G
+  memory: 500M
+  disk_quota: 500M
   instances: 1
   env:
+    JAVA_OPTS: '-XX:MaxMetaspaceSize=80780K -Xss512k -Xmx200M -XX:ReservedCodeCacheSize=16M -XX:MaxDirectMemorySize=16M'
     REGISTRATION_SERVER_ENDPOINT: http://tracker-registration2-madhav.apps.dev.pcf-aws.com
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
