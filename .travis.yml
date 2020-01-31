@@ -21,10 +21,10 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
-        - ./gradle testMigrate
+        - ./gradlew testMigrate
       script:
         - APPLICATION=allocations
-        - ./gradle clean :applications:${APPLICATION}-server:build
+        - ./gradlew clean :applications:${APPLICATION}-server:build
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
@@ -45,10 +45,10 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
-        - ./gradle testMigrate
+        - ./gradlew testMigrate
       script:
         - APPLICATION=backlog
-        - ./gradle clean :applications:${APPLICATION}-server:build
+        - ./gradlew clean :applications:${APPLICATION}-server:build
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
@@ -65,10 +65,10 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
-        - ./gradle testMigrate
+        - ./gradlew testMigrate
       script:
         - APPLICATION=registration
-        - ./gradle clean :applications:${APPLICATION}-server:build
+        - ./gradlew clean :applications:${APPLICATION}-server:build
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
@@ -85,10 +85,10 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
-        - ./gradle testMigrate
+        - ./gradlew testMigrate
       script:
         - APPLICATION=timesheets
-        - ./gradle clean :applications:${APPLICATION}-server:build
+        - ./gradlew clean :applications:${APPLICATION}-server:build
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
@@ -154,4 +154,4 @@ jobs:
         - sudo apt-get install cf-cli
       script:
         - cf login -a $CF_API_URL -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $CF_SPACE
-        - ./gradle cfMigrate
+        - ./gradlew cfMigrate
