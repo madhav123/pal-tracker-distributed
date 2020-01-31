@@ -21,7 +21,6 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
-        - ./gradle testMigrate
       script:
         - APPLICATION=allocations
         - ./gradle clean :applications:${APPLICATION}-server:build
@@ -45,7 +44,6 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
-        - ./gradle testMigrate
       script:
         - APPLICATION=backlog
         - ./gradle clean :applications:${APPLICATION}-server:build
