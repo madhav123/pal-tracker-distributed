@@ -65,7 +65,6 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
-        - ./gradle testMigrate
       script:
         - APPLICATION=registration
         - ./gradle clean :applications:${APPLICATION}-server:build
@@ -85,7 +84,6 @@ jobs:
       install: skip
       before_script:
         - mysql -uroot < databases/create_databases.sql
-        - ./gradle testMigrate
       script:
         - APPLICATION=timesheets
         - ./gradle clean :applications:${APPLICATION}-server:build
