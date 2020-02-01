@@ -2,7 +2,7 @@ applications:
 - name: tracker-timesheets2
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
-  - route: tracker-timesheets2-madhav.apps.dev.pcf-aws.com
+  - route: tracker-timesheets-madhav.apps.dev.pcf-aws.com
   memory: 500M
   disk_quota: 500M
   instances: 1
