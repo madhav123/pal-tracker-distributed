@@ -1,5 +1,5 @@
 applications:
-- name: tracker-allocations2
+- name: tracker-allocations
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
   - route: tracker-allocations-madhav.apps.dev.pcf-aws.com
